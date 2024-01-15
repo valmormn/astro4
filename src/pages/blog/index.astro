@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/ui/Card/index.astro";
+
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+// console.log(posts);
+
+// const posts = (await getCollection('posts')).sort(
+// 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+// );
+
+// console.log(posts);
+
+---
+
+<Layout title="Blog">
+  <h1>Blog</h1>
+
+  <!-- {posts.map((post) => <Card {...post.data} />)} -->
+
+  <ul>
+    {
+      posts.map((article) => (
+        <li>
+          <a href={`/blog/${article.slug}/`}>
+            <h4 class="title">{article.data.title  ?? "doido hein"}</h4>
+
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
+
+<style></style>

@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+import "./Navbar.scss";
+
+const { title } = Astro.props;
+---
+
+<header class="nav navbar bg-transparent">
+  <div>
+    <a href="/"><Icon name="mdi:menu" class="toggle-sidebar" style="display:none"/></a>
+    <a href="/"><Icon name="mdi:home" class="" /></a>
+  </div>
+  <div>
+    <h1>{title}</h1>
+  </div>
+  <div>
+    <!-- <a href="/auth"><Icon name="mdi:palette-swatch-variant" class="" /></a> -->
+    <a href="/blog"><Icon name="ic:baseline-article" class="" /></a>
+    <!-- <a href="/shop"><Icon name="ic:baseline-shopping-cart" class="" /></a> -->
+    <!-- <a href="/auth"><Icon name="ic:round-person" class="" /></a> -->
+  </div>
+</header>
+
+<style lang="scss">
+  .toggle-sidebar {
+    cursor: pointer;
+  }
+</style>

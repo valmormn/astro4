@@ -1,0 +1,31 @@
+ul {
+  display: grid;
+  /**
+   * Sets the grid template columns to repeat as many times as possible while keeping each column at least 300px wide and filling the available space.
+   */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+@media (max-width: 720px) {
+ul {
+  /* Display in 1 column when the screen width is less than 720px */
+  grid-template-columns: 1fr;
+}
+}
+
+@media (min-width: 720px) and (max-width: 1080px) {
+ul {
+  /* Display in 3 columns when the screen width is between 720px and 1080px */
+  grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media (min-width: 1080px) {
+ul {
+  /* Display in 4 columns when the screen width is greater than 1080px */
+  grid-template-columns: repeat(4, 1fr);
+}
+}

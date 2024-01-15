@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @import'./fonts.scss';
+// @import'./variables.scss';
+
+* {
+  min-width: 0; // https://www.youtube.com/watch?v=cH8VbLM1958
+}
+
+body {
+  //  margin: $spacing-0;
+  //  background: hsl($colour-dark-hue $colour-dark-saturation $colour-dark-luminance);
+  //  font-family: Roboto;
+  //  text-align: center;
+}
+
+h1 {
+  //  font-size: 3.815rem;
+  //  margin-bottom: $spacing-12;
+}
+
+[data-icon] {
+  height: 4rem;
+  cursor: pointer;
+}

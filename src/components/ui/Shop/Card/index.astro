@@ -1,0 +1,31 @@
+---
+import './card.style.scss'
+
+export interface Props {
+	title?: string;
+	body?: string;
+	href?: string;
+	description?: string; // make description optional
+}
+
+// console.log(Astro.props)
+
+const { href, title, description, path } = Astro.props;
+---
+
+<li class="link-card">
+	<a href={`/shop/${path}/`}>
+		<h2 class="card-title">
+			{title}
+			<span>&rarr;</span>
+		</h2>
+		<p class="card-text">
+			{description}
+		</p>
+		<p>shop card</p>
+	</a>
+</li>
+
+<style>
+	
+</style>

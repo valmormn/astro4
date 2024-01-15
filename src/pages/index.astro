@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+// import Button from "@components/ui/Button";
+import Button from "../components/ui/Button/index.astro";
+// import Card from '../components/Card.astro';
+// import { Dexie } from "dexie";
+// import marked from "marked";
+// import ai from "../util/lib/ai";
+
+// const ai_respose = await ai();
+
+// import { createApi } from "unsplash-js";
+// import { getCollection, getEntry } from "astro:content";
+// const allBlogPosts = await getCollection('post');
+// console.log(allBlogPosts);
+// const graceHopperProfile = await getEntry('authors', 'grace-hopper');
+
+//  a function that fetchs data from https://api.myip.com
+//  and returns the result as a string
+
+// const asd = marked(ai_respose[0].message.content);
+
+const PROJECT_NAME = import.meta.env.PROJECT_NAME;
+---
+
+<style lang="scss">
+  header,
+  section {
+    // padding: 2rem;
+    // background: #eee;
+    // border-radius: 0.5rem;
+    margin: 2rem 1rem;
+  }
+
+  .red {
+    background-color: yellow;
+    color: crimson;
+  }
+</style>
+
+<Layout title="Welcome to Astro.">
+  <!-- Hero -->
+  <header>
+    <h1>Index</h1>
+
+    <h1>Hero</h1>
+    <button class="btn">Hello daisyUI</button>
+    <p>{PROJECT_NAME}</p>
+  </header>
+
+  <!-- Blog -->
+  <section>
+    <h1>Blog</h1>
+		<Button>asd</Button>
+    <button _="on click log 'Hello Console!'" class="btn wtf"
+      >Get Some wtf</button
+    >
+    <button _="set :x to {name : 'Joe', age: 35}" class="btn"> set</button>
+    <button
+      _="on click if true log 'Clicked!' end
+           on mouseenter log 'Mouse entered!'"
+      class="btn"
+    >
+      Click Me
+    </button>
+    <button class="btn" onclick="layout_modal.showModal()">open modal</button>
+		<button class="btn" onclick="layout_modal.showModal()">open modal</button>
+
+  </section>
+
+  <!-- Shop -->
+  <section>
+    <h1>Shop</h1>
+  </section>
+</Layout>
+
+<script>
+  // import ai from "../utils/libs/ai";
+
+  const fetchMyIp = async () => {
+    const res = await fetch("https://api.myip.com");
+    const data = await res.json();
+    return JSON.stringify(data);
+  };
+
+  document.getElementsByClassName("wtf")[0].addEventListener("click", () => {
+    // fetchMyIp().then((res) => {
+    console.log("oiiiiii wtf");
+    // console.log(ai("diz uma piada"));
+    // document.getElementsByClassName("wtf")[0].innerHTML = ai("diz uma piada");
+    // });/
+  });
+</script>
