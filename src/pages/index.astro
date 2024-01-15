@@ -1,7 +1,8 @@
 ---
+import type { ButtonWithHTMX } from "../env.d.ts";
 import Layout from "../layouts/Layout.astro";
 // import Button from "@components/ui/Button";
-import Button from "../components/ui/Button/index.astro";
+// import Button from "../components/ui/Button/index.astro";
 // import Card from '../components/Card.astro';
 // import { Dexie } from "dexie";
 // import marked from "marked";
@@ -21,6 +22,8 @@ import Button from "../components/ui/Button/index.astro";
 // const asd = marked(ai_respose[0].message.content);
 
 const PROJECT_NAME = import.meta.env.PROJECT_NAME;
+const MyButton: ButtonWithHTMX = Astro.props;
+
 ---
 
 <style lang="scss">
@@ -51,13 +54,13 @@ const PROJECT_NAME = import.meta.env.PROJECT_NAME;
   <!-- Blog -->
   <section>
     <h1>Blog</h1>
-		<Button>asd</Button>
-    <button _="on click log 'Hello Console!'" class="btn wtf"
+		<!-- <Button>asd</Button> -->
+    <button  {...MyButton} _="on click log 'Hello Console!'" class="btn wtf"
       >Get Some wtf</button
     >
-    <button _="set :x to {name : 'Joe', age: 35}" class="btn"> set</button>
+    <button  {...MyButton} _="set :x to {name : 'Joe', age: 35}" class="btn"> set</button>
     <button
-      _="on click if true log 'Clicked!' end
+       {...MyButton} _="on click if true log 'Clicked!' end
            on mouseenter log 'Mouse entered!'"
       class="btn"
     >

@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: import.meta.env.OPENAI_API_KEY,
 });
 
-async function ai(msg) {
+async function ai(msg: any) {
   const completion = await openai.chat.completions.create({
     messages: [{ role: "user", content: msg }],
     model: "gpt-3.5-turbo",
